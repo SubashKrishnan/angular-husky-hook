@@ -126,4 +126,12 @@ If you find that commits are being blocked even when no files match the `lint-st
 
 If `lint-staged` fails due to an error, review the output provided by `lint-staged` for details on the cause. Adjust the configuration in `.lintstagedrc.json` if necessary.
 
+## Troubleshooting
+
+If you encounter any issues during the commit process, such as linting errors blocking your commit, here’s an example screenshot of what you might see:
+
+![Linting Error Example](<precommit error message.png>)
+
+Make sure to fix any linting errors before committing your changes.
+
 ---
