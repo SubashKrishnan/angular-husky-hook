@@ -1,4 +1,14 @@
 #!/usr/bin/env sh
 . "$(dirname -- "$0")/_/husky.sh"
 
-npm run precommit
+# Run lint-staged to lint and format staged files
+npx lint-staged
+
+# Check the exit code of lint-staged
+if [ $? -ne 0 ]; then
+  echo "Linting failed. Please fix the errors before committing."
+  exit 1
+fi
+
+# Run tests only if lint-staged passed or there were no relevant files to lint
+npm run test
